@@ -2,6 +2,7 @@
 ._*
 
 /build/
+/arena/runs/
 *.o
 *.obj
 *.a

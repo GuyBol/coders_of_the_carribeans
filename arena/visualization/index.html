@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arena Replay Room</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/vendor/lucide.min.js" defer></script>
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><i data-lucide="anchor" aria-hidden="true"></i><span>Arena <strong>Replay Room</strong></span></div>
+    <div class="top-actions"><span class="local-label">LOCAL ARCHIVE</span><button id="refresh" class="icon-button" title="Refresh tournaments" aria-label="Refresh tournaments"><i data-lucide="refresh-cw" aria-hidden="true"></i></button></div>
+  </header>
+  <div class="workspace">
+    <aside class="library" aria-label="Tournament library">
+      <div class="library-heading"><label for="run-select">Tournament</label><select id="run-select" aria-label="Tournament"><option>Loading…</option></select></div>
+      <div class="games-heading"><h2>Games <span id="game-count"></span></h2><div class="search-field"><i data-lucide="search" aria-hidden="true"></i><input id="search" type="search" placeholder="Filter games" aria-label="Filter games"></div></div>
+      <div id="matches" class="matches" aria-label="Games"></div>
+      <details class="standings" open><summary>Standings <span>Elo</span><i data-lucide="chevron-down" aria-hidden="true"></i></summary><table><thead><tr><th scope="col">Bot</th><th scope="col">W–D–L</th><th scope="col">Rating</th></tr></thead><tbody id="rankings"></tbody></table></details>
+    </aside>
+    <main class="viewer">
+      <header class="game-heading"><div><p class="eyebrow" id="game-category">ARENA REPLAYS</p><h1 id="game-title">Replay Room</h1><p id="game-subtitle" class="muted"></p></div><span id="game-result" class="result-label"></span></header>
+      <div id="notice" class="notice" role="alert" hidden></div>
+      <div id="game-host" class="game-host"><div class="empty-state" role="status">Loading tournaments…</div></div>
+      <footer class="playback" aria-label="Playback controls">
+        <div class="transport">
+          <button id="first" class="icon-button" title="First frame" aria-label="First frame" disabled><i data-lucide="skip-back" aria-hidden="true"></i></button>
+          <button id="previous" class="icon-button" title="Previous frame" aria-label="Previous frame" disabled><i data-lucide="chevron-left" aria-hidden="true"></i></button>
+          <button id="play" class="icon-button play-button" title="Play" aria-label="Play" aria-pressed="false" disabled><i data-lucide="play" aria-hidden="true"></i></button>
+          <button id="next" class="icon-button" title="Next frame" aria-label="Next frame" disabled><i data-lucide="chevron-right" aria-hidden="true"></i></button>
+          <button id="last" class="icon-button" title="Last frame" aria-label="Last frame" disabled><i data-lucide="skip-forward" aria-hidden="true"></i></button>
+        </div>
+        <input id="timeline" type="range" min="0" max="0" value="0" aria-label="Replay timeline" disabled>
+        <label class="turn-field" for="frame">Turn <input id="frame" type="number" min="0" max="0" value="0" aria-label="Turn number" disabled><span id="frame-total">/ 0</span></label>
+        <select id="speed" aria-label="Playback speed" title="Playback speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option><option value="4">4×</option></select>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
