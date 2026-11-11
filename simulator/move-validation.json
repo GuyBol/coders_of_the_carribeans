@@ -1,0 +1,21 @@
+{
+  "generated_at": "2026-11-11T15:58:23Z",
+  "archive": "/Users/tmaltaverne/Documents/dev/codingame/caribbean-games",
+  "subset": "holdout",
+  "games": {
+    "training": 336,
+    "holdout": 71
+  },
+  "cases": 685,
+  "matched": 685,
+  "mismatches": [
+
+  ],
+  "conflicting_inputs": [
+
+  ],
+  "errors": [
+
+  ],
+  "engine_sha256": "9fdc257781e11c36c8ac4bf9a909922b3fad4ddb3c1b37e660a5f19ddd0dc74d"
+}

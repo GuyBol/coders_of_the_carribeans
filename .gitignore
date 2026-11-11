@@ -1,0 +1,13 @@
+.DS_Store
+._*
+
+/build/
+*.o
+*.obj
+*.a
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.dSYM/
